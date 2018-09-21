@@ -1,5 +1,6 @@
 package erp.libertas.client;
 
+import erp.libertas.client.cliente.ListaCliente;
 import erp.libertas.client.fornecedor.ListaFornecedor;
 import erp.libertas.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
@@ -25,7 +26,7 @@ public class ERP8pLibertas implements EntryPoint {
 	private VerticalPanel painelConteudo = new VerticalPanel();
 	private Label lblTitulo = new Label("ERP 8o período - Libertas");
 	private Button btnFornecedor = new Button("Cadastro de Fornecedores");
-	
+	private Button btnCliente = new Button("Cadastro de Clientes");
 	public void onModuleLoad() {
 		RootPanel.get().add(lblTitulo);
 		RootPanel.get().add(painelMenu);
@@ -40,5 +41,16 @@ public class ERP8pLibertas implements EntryPoint {
 				painelConteudo.add(cad);
 			}
 		});
+		painelMenu.add(btnCliente);
+		btnCliente.addClickHandler(new 
+				ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				ListaCliente cad = new ListaCliente();
+				painelConteudo.clear();
+				painelConteudo.add(cad);
+			}
+		});
 	}
+	
 }

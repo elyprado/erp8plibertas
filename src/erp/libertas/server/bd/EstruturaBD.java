@@ -17,14 +17,18 @@ public class EstruturaBD {
 			sta.execute(sql);
 
 			/*sql = "INSERT INTO cidade (nome, uf) VALUES"
-					+ "('São Sebastião do Paraíso','MG')";
+					+ "('Sï¿½o Sebastiï¿½o do Paraï¿½so','MG')";
 			sta.execute(sql);
 			*/
+			
 
-			sql = "CREATE TABLE IF NOT EXISTS fornecedor ("
-					+ "idfornecedor int primary key auto_increment,"
+			sql = "CREATE TABLE IF NOT EXISTS cliente ("
+					+ "idcliente int primary key auto_increment,"
 					+ "nome varchar(50),"
 					+ "endereco varchar(50),"
+					+ "bairro varchar(50),"
+					+ "email varchar(50),"
+					+"cpf varchar(20),"
 					+ "idcidade int,"
 					+ "telefone varchar(20),"
 					+ "constraint foreign key (idcidade) references cidade(idcidade) )";
