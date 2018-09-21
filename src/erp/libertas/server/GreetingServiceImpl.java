@@ -2,8 +2,10 @@ package erp.libertas.server;
 
 import erp.libertas.client.GreetingService;
 import erp.libertas.server.dao.FornecedorDao;
+import erp.libertas.server.dao.ProdutoDao;
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Produto;
 
 import java.util.List;
 
@@ -37,5 +39,32 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirFornecedor(Fornecedor f) {
 		FornecedorDao fdao = new FornecedorDao();
 		fdao.excluir(f);
+	}
+
+	@Override
+	public List<Produto> listarProduto() {
+		ProdutoDao pdao = new ProdutoDao();
+		return pdao.listar();
+	}
+
+	@Override
+	public void inserirProduto(Produto p) {
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.inserir(p);
+		
+	}
+
+	@Override
+	public void alterarProduto(Produto p) {
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.alterar(p);
+		
+	}
+
+	@Override
+	public void excluirProduto(Produto p) {
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.excluir(p);
+		
 	}
 }
