@@ -42,6 +42,18 @@ public class EstruturaBD {
 			sta = con.getConexao().createStatement();
 			sta.execute(sql);
 			
+			sql = "CREATE TABLE IF NOT EXISTS receber ("
+					+ "  idReceber int,"
+					+ "  dataLancto date,"
+			+ "  dataVencimento date,"
+			+ "  idcliente int,"
+			+ "  valor double,"
+			+ "  valorPago double,"
+			+ "  dataPagamento date,"
+			+ "  descricao varchar(50),"
+			+ "constraint foreign key (idcliente) references cliente(idcliente) )";
+			sta.execute(sql);
+			
 			con.desconecta();
 			System.out.println("fim");
 		} catch (Exception e) {
