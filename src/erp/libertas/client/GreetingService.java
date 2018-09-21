@@ -6,6 +6,7 @@ import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Produto;
 
 /**
  * The client-side stub for the RPC service.
@@ -16,4 +17,10 @@ public interface GreetingService extends RemoteService {
 	public void inserirFornecedor(Fornecedor f);
 	public void alterarFornecedor(Fornecedor f);
 	public void excluirFornecedor(Fornecedor f);
+	
+	public List<Produto> listarProduto();
+	public void inserirProduto(Produto p);
+	public void alterarProduto(Produto p);
+	public void excluirProduto(Produto p);
+	
 }
