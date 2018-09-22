@@ -30,8 +30,8 @@ public class ListaProduto extends Composite {
 			@Override
 			public void onClick(ClickEvent event) {
 				Fornecedor f = new Fornecedor();
-				DialogProduto dialog = new DialogProduto(ListaProduto.this, f);
-				dialog.center();
+			//	DialogProduto dialog = new DialogProduto(ListaProduto.this, f);
+			//	dialog.center();
 			}
 		});
 	}
