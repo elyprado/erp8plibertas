@@ -3,9 +3,13 @@ package erp.libertas.server;
 import erp.libertas.client.GreetingService;
 import erp.libertas.server.dao.FornecedorDao;
 import erp.libertas.server.dao.ProdutoDao;
+import erp.libertas.server.dao.BancoDao;
+import erp.libertas.server.dao.CaixaDao;
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
+import erp.libertas.shared.Banco;
+import erp.libertas.shared.Caixa;
 
 import java.util.List;
 
@@ -65,6 +69,60 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirProduto(Produto p) {
 		ProdutoDao pdao = new ProdutoDao();
 		pdao.excluir(p);
+		
+	}
+	
+	@Override
+	public List<Banco> listarBanco() {
+		BancoDao bdao = new BancoDao();
+		return bdao.listar();
+	}
+
+	@Override
+	public void inserirBanco(Banco b) {
+		BancoDao bdao = new BancoDao();
+		bdao.inserir(b);
+		
+	}
+
+	@Override
+	public void alterarBanco(Banco b) {
+		BancoDao bdao = new BancoDao();
+		bdao.alterar(b);
+		
+	}
+
+	@Override
+	public void excluirBanco(Banco b) {
+		BancoDao bdao = new BancoDao();
+		bdao.excluir(b);
+		
+	}
+	
+	@Override
+	public List<Caixa> listarCaixa() {
+		CaixaDao cdao = new CaixaDao();
+		return cdao.listar();
+	}
+
+	@Override
+	public void inserirCaixa(Caixa c) {
+		CaixaDao cdao = new CaixaDao();
+		cdao.inserir(c);
+		
+	}
+
+	@Override
+	public void alterarCaixa(Caixa c) {
+		CaixaDao cdao = new CaixaDao();
+		cdao.alterar(c);
+		
+	}
+
+	@Override
+	public void excluirCaixa(Caixa c) {
+		CaixaDao cdao = new CaixaDao();
+		cdao.excluir(c);
 		
 	}
 }
