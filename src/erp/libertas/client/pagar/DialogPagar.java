@@ -57,7 +57,7 @@ public class DialogPagar extends DialogBox {
 		btnSalvar.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				salvar();
+				//salvar();
 			}
 		});
 		btnCancelar.addClickHandler(new ClickHandler() {
@@ -68,7 +68,7 @@ public class DialogPagar extends DialogBox {
 			}
 		});
 	}
-
+/*
 	private void salvar() {
 		Fornecedor f= new Fornecedor();
 		f.setIdfornecedor(Integer.parseInt(txtFornecedor.getText()));
@@ -92,5 +92,5 @@ public class DialogPagar extends DialogBox {
 				Window.alert("Falha ao comunicar com servidor");
 			}
 		});
-	}
+	}*/
 }
