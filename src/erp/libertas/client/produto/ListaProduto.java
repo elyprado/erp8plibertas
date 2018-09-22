@@ -15,12 +15,13 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import erp.libertas.client.GreetingService;
 import erp.libertas.client.GreetingServiceAsync;
 import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Produto;
 
 public class ListaProduto extends Composite {
 	private VerticalPanel painel = new VerticalPanel();
-	private Button btnNovo = new Button("Novo Fornecedor");
+	private Button btnNovo = new Button("Novo Produto");
 	private final GreetingServiceAsync service = GWT.create(GreetingService.class);
-	private Label lblTitulo = new Label("Cadastro de Fornecedores");
+	private Label lblTitulo = new Label("Cadastro de Produtos");
 	
 	public ListaProduto() {
 		initWidget(painel);
@@ -29,9 +30,10 @@ public class ListaProduto extends Composite {
 		btnNovo.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				Fornecedor f = new Fornecedor();
-			//	DialogProduto dialog = new DialogProduto(ListaProduto.this, f);
-			//	dialog.center();
+
+				Produto p = new Produto();
+				DialogProduto dialog = new DialogProduto(ListaProduto.this, p);
+				dialog.center();
 			}
 		});
 	}
@@ -41,14 +43,14 @@ public class ListaProduto extends Composite {
 		painel.add(new Label("Aguarde, carregando..."));
 
 		
-		service.listarFornecedor(new AsyncCallback<List<Fornecedor>>() {
+		service.listarProduto(new AsyncCallback<List<Produto>>() {
 			@Override
-			public void onSuccess(List<Fornecedor> result) {
+			public void onSuccess(List<Produto> result) {
 				painel.clear();
 				painel.add(lblTitulo);
 				painel.add(btnNovo);
-				for (Fornecedor f : result) {
-					ItemProduto item = new ItemProduto(ListaProduto.this, f);
+				for (Produto p : result) {
+					ItemProduto item = new ItemProduto(ListaProduto.this, p);
 					painel.add(item);
 				}
 			}

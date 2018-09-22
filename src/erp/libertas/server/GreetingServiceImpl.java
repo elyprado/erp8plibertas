@@ -2,6 +2,7 @@ package erp.libertas.server;
 
 import erp.libertas.client.GreetingService;
 import erp.libertas.server.dao.FornecedorDao;
+import erp.libertas.server.dao.ProdutoDao;
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
@@ -42,25 +43,28 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public List<Produto> listarProduto() {
-		// TODO Auto-generated method stub
-		return null;
+		ProdutoDao pdao = new ProdutoDao();
+		return pdao.listar();
 	}
 
 	@Override
 	public void inserirProduto(Produto p) {
-		// TODO Auto-generated method stub
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.inserir(p);
 		
 	}
 
 	@Override
 	public void alterarProduto(Produto p) {
-		// TODO Auto-generated method stub
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.alterar(p);
 		
 	}
 
 	@Override
 	public void excluirProduto(Produto p) {
-		// TODO Auto-generated method stub
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.excluir(p);
 		
 	}
 }
