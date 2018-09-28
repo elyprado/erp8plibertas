@@ -2,10 +2,18 @@ package erp.libertas.server;
 
 import erp.libertas.client.GreetingService;
 import erp.libertas.server.dao.FornecedorDao;
+import erp.libertas.server.dao.ProdutoDao;
+import erp.libertas.server.dao.BancoDao;
+import erp.libertas.server.dao.CaixaDao;
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
+<<<<<<< HEAD
 import erp.libertas.shared.Receber;
+=======
+import erp.libertas.shared.Banco;
+import erp.libertas.shared.Caixa;
+>>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 
 import java.util.List;
 
@@ -43,49 +51,82 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public List<Produto> listarProduto() {
-		// TODO Auto-generated method stub
-		return null;
+		ProdutoDao pdao = new ProdutoDao();
+		return pdao.listar();
 	}
 
 	@Override
 	public void inserirProduto(Produto p) {
-		// TODO Auto-generated method stub
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.inserir(p);
 		
 	}
 
 	@Override
 	public void alterarProduto(Produto p) {
-		// TODO Auto-generated method stub
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.alterar(p);
 		
 	}
 
 	@Override
 	public void excluirProduto(Produto p) {
-		// TODO Auto-generated method stub
+		ProdutoDao pdao = new ProdutoDao();
+		pdao.excluir(p);
+		
+	}
+	
+	@Override
+	public List<Banco> listarBanco() {
+		BancoDao bdao = new BancoDao();
+		return bdao.listar();
+	}
+
+	@Override
+	public void inserirBanco(Banco b) {
+		BancoDao bdao = new BancoDao();
+		bdao.inserir(b);
 		
 	}
 
 	@Override
-	public void alterarReceber(Receber r) {
-		// TODO Auto-generated method stub
+	public void alterarBanco(Banco b) {
+		BancoDao bdao = new BancoDao();
+		bdao.alterar(b);
 		
 	}
 
 	@Override
-	public void excluirReceber(Receber r) {
-		// TODO Auto-generated method stub
+	public void excluirBanco(Banco b) {
+		BancoDao bdao = new BancoDao();
+		bdao.excluir(b);
+		
+	}
+	
+	@Override
+	public List<Caixa> listarCaixa() {
+		CaixaDao cdao = new CaixaDao();
+		return cdao.listar();
+	}
+
+	@Override
+	public void inserirCaixa(Caixa c) {
+		CaixaDao cdao = new CaixaDao();
+		cdao.inserir(c);
 		
 	}
 
 	@Override
-	public void inserirReceber(Receber r) {
-		// TODO Auto-generated method stub
+	public void alterarCaixa(Caixa c) {
+		CaixaDao cdao = new CaixaDao();
+		cdao.alterar(c);
 		
 	}
 
 	@Override
-	public List<Receber> listaReceber() {
-		// TODO Auto-generated method stub
-		return null;
+	public void excluirCaixa(Caixa c) {
+		CaixaDao cdao = new CaixaDao();
+		cdao.excluir(c);
+		
 	}
 }

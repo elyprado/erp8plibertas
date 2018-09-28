@@ -5,6 +5,8 @@ import java.util.List;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
+import erp.libertas.shared.Banco;
+import erp.libertas.shared.Caixa;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
 import erp.libertas.shared.Receber;
@@ -27,5 +29,15 @@ public interface GreetingService extends RemoteService {
 	void excluirReceber(Receber r);
 	void inserirReceber(Receber r);
 	List<Receber> listaReceber();
+	
+	List<Banco> listarBanco();
+	void inserirBanco(Banco b);
+	void alterarBanco(Banco b);
+	void excluirBanco(Banco b);
+	
+	List<Caixa> listarCaixa();
+	void inserirCaixa(Caixa c);
+	void alterarCaixa(Caixa c);
+	void excluirCaixa(Caixa c);
 	
 }
