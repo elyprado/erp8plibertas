@@ -69,6 +69,7 @@ public class DialogCaixa extends DialogBox{
     }
 
     private void salvar() {
+	
 	Banco b = new Banco();
 	b.setIdBanco(Integer.parseInt(txtBanco.getText()));
 	caixa.setBanco(b);

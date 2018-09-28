@@ -18,6 +18,7 @@ public class ItemBanco extends Composite{
     private ListaBanco listaBanco;
 	
     public ItemBanco(ListaBanco listaBanco, Banco banco) {
+	
 	this.banco = banco;
 	this.listaBanco = listaBanco;
 	lblNome.setText(banco.getNome());

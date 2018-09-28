@@ -38,6 +38,7 @@ public class ListaBanco extends Composite{
     }
 	
     public void listar() {
+	
 	painel.clear();
 	painel.add(lblTitulo);
 	painel.add(new Label("Aguarde, carregando..."));

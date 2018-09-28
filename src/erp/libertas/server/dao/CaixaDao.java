@@ -43,6 +43,7 @@ public class CaixaDao {
 	con.desconecta();
 	return lista;
 }
+    
 public void inserir(Caixa c) {
 	Conexao con = new Conexao();
 	try {
@@ -61,6 +62,7 @@ public void inserir(Caixa c) {
 	}
 	con.desconecta();
 }
+
 public void alterar(Caixa c) {
 	Conexao con = new Conexao();
 	try {
@@ -84,6 +86,7 @@ public void alterar(Caixa c) {
 	}
 	con.desconecta();	
 }
+
 public void excluir(Caixa c) {
 	Conexao con = new Conexao();
 	try {

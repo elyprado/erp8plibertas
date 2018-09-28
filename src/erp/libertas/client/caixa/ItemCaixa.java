@@ -9,6 +9,7 @@ import erp.libertas.client.caixa.ListaCaixa;
 import erp.libertas.shared.Caixa;
 
 public class ItemCaixa extends Composite {
+    
 	private Label lblNome = new Label();
 	private Label lblId = new Label();
 	private Button btnAlterar = new Button("Alterar");
