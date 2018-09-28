@@ -40,6 +40,7 @@ public class ListaCaixa extends Composite {
 			}
 		});
 	}
+	
 	public void listar() {
 		painel.clear();
 		painel.add(lblTitulo);

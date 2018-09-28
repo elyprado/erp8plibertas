@@ -44,7 +44,7 @@ public class CaixaDao {
 	return lista;
 }
     
-public void inserir(Caixa c) {
+    public void inserir(Caixa c) {
 	Conexao con = new Conexao();
 	try {
 		String sql = "INSERT INTO caixa "
@@ -63,7 +63,7 @@ public void inserir(Caixa c) {
 	con.desconecta();
 }
 
-public void alterar(Caixa c) {
+    public void alterar(Caixa c) {
 	Conexao con = new Conexao();
 	try {
 		String sql = "UPDATE caixa SET "
@@ -87,7 +87,7 @@ public void alterar(Caixa c) {
 	con.desconecta();	
 }
 
-public void excluir(Caixa c) {
+    public void excluir(Caixa c) {
 	Conexao con = new Conexao();
 	try {
 		String sql = "DELETE FROM caixa "

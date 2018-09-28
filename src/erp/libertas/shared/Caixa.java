@@ -59,5 +59,4 @@ public class Caixa implements Serializable {
     public void setBanco(Banco banco) {
         this.banco = banco;
     }
-
 }

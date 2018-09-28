@@ -57,7 +57,6 @@ public class DialogBanco extends DialogBox {
     }
 
     private void salvar() {
-	
 	banco.setNome(txtNome.getText());
 	
 	service.inserirBanco(banco, new AsyncCallback<Void>() {

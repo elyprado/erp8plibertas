@@ -33,5 +33,4 @@ public class ItemCaixa extends Composite {
 		
 		painel.setStyleName("itemLista");
 	}
-
 }

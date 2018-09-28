@@ -64,7 +64,7 @@ public class BancoDao {
 	con.desconecta();	
 }
 	
-	public void excluir(Banco b) {
+    public void excluir(Banco b) {
 	Conexao con = new Conexao();
 	try {
 		String sql = "DELETE FROM banco "
