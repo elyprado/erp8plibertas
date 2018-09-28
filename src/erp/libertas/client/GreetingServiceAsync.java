@@ -22,12 +22,10 @@ public interface GreetingServiceAsync {
 	void alterarProduto(Produto p, AsyncCallback<Void> callback);
 	void excluirProduto(Produto p, AsyncCallback<Void> callback);
 	void inserirProduto(Produto p, AsyncCallback<Void> callback);
-<<<<<<< HEAD
 	void alterarReceber(Receber r, AsyncCallback<Void> callback);
 	void excluirReceber(Receber r, AsyncCallback<Void> callback);
 	void inserirReceber(Receber r, AsyncCallback<Void> callback);
 	void listaReceber(AsyncCallback<List<Receber>> asyncCallback);
-=======
 	void listarBanco(AsyncCallback<List<Banco>> callback);
 	void inserirBanco(Banco b, AsyncCallback<Void> callback);
 	void alterarBanco(Banco b, AsyncCallback<Void> callback);
@@ -36,5 +34,4 @@ public interface GreetingServiceAsync {
 	void inserirCaixa(Caixa c, AsyncCallback<Void> callback);
 	void alterarCaixa(Caixa c, AsyncCallback<Void> callback);
 	void excluirCaixa(Caixa c, AsyncCallback<Void> callback);
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 }
