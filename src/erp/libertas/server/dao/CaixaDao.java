@@ -19,7 +19,7 @@ public class CaixaDao {
 		String sql = "SELECT "
 				+ "c.idcaixa, c.data,"
 				+ "c.valor, c.descricao, c.planoDeContas,"
-				+ "b.idbanco, b.nome"
+				+ "b.idbanco, b.nome "
 				+ "FROM caixa c "
 				+ "INNER JOIN banco b ON c.banco_idbanco = b.idbanco";
 		Statement sta = con.getConexao().createStatement();
@@ -30,7 +30,7 @@ public class CaixaDao {
 			b.setIdBanco(res.getInt("idbanco"));
 			b.setNome(res.getString("nome"));
 			c.setIdCaixa(res.getInt("idcaixa"));
-			c.setData(res.getDate("data"));
+			c.setData(res.getString("data"));
 			c.setValor(res.getDouble("valor"));
 			c.setDescricao(res.getString("descricao"));
 			c.setPlanoDeContas(res.getString("planoDeContas"));
@@ -46,7 +46,7 @@ public class CaixaDao {
 public void inserir(Caixa c) {
 	Conexao con = new Conexao();
 	try {
-		String sql = "INSERT INTO Caixa "
+		String sql = "INSERT INTO caixa "
 				+ "(data, valor, descricao, planoDeContas, banco_idbanco) "
 				+ " VALUES (?, ?, ?, ?, ?)";
 		PreparedStatement sta = con.getConexao().prepareStatement(sql);
