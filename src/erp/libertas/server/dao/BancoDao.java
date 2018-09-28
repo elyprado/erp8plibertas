@@ -16,14 +16,14 @@ public class BancoDao {
 	Conexao con = new Conexao();
 	try {
 		String sql = "SELECT "
-				+ "idBanco,"
+				+ "idbanco,"
 				+ "nome "
 				+ "FROM banco";
 		Statement sta = con.getConexao().createStatement();
 		ResultSet res = sta.executeQuery(sql);
 		while (res.next()) {
 			Banco b = new Banco();
-			b.setIdBanco(res.getInt("idBanco"));
+			b.setIdBanco(res.getInt("idbanco"));
 			b.setNome(res.getString("nome"));
 			lista.add(b);
 		}
@@ -54,7 +54,7 @@ public class BancoDao {
 	try {
 		String sql = "UPDATE banco SET "
 				+ "nome = ?"
-				+ "WHERE idBanco = ?";
+				+ "WHERE idbanco = ?";
 		PreparedStatement sta = con.getConexao().prepareStatement(sql);
 		sta.setString(1, b.getNome());
 		sta.execute();			
@@ -68,7 +68,7 @@ public class BancoDao {
 	Conexao con = new Conexao();
 	try {
 		String sql = "DELETE FROM banco "
-				+ "WHERE idBanco = ?";
+				+ "WHERE idbanco = ?";
 		PreparedStatement sta = con.getConexao().prepareStatement(sql);
 		sta.setInt(1, b.getIdBanco());
 		sta.execute();			
