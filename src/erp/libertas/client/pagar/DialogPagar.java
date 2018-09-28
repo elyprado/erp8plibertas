@@ -1,5 +1,7 @@
 package erp.libertas.client.pagar;
 
+
+
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -13,7 +15,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import erp.libertas.client.GreetingService;
 import erp.libertas.client.GreetingServiceAsync;
 import erp.libertas.client.componente.CaixaDeTexto;
-import erp.libertas.shared.Cidade;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Pagar;
 
@@ -30,13 +31,13 @@ public class DialogPagar extends DialogBox {
 	private Button btnCancelar = new Button("Cancelar");
 	private HorizontalPanel painelBtn = new HorizontalPanel();
 	private VerticalPanel painel = new VerticalPanel();
-	private Pagar pagar;
+	Pagar pagar;
 	private final GreetingServiceAsync service = GWT.create(GreetingService.class);
-	private ListaPagar listapagar;
+	ListaPagar listapagar;
 	
 	public DialogPagar(ListaPagar listaPagar, Pagar pagar) {
 		this.pagar = pagar;
-		this.listapagar = listapagar;
+		this.listapagar = listaPagar;
 		
 		painel.add(txtDataLancto);
 		painel.add(txtDataVencimento);
@@ -57,7 +58,7 @@ public class DialogPagar extends DialogBox {
 		btnSalvar.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				//salvar();
+				salvar();
 			}
 		});
 		btnCancelar.addClickHandler(new ClickHandler() {
@@ -68,17 +69,19 @@ public class DialogPagar extends DialogBox {
 			}
 		});
 	}
-/*
+
 	private void salvar() {
 		Fornecedor f= new Fornecedor();
 		f.setIdfornecedor(Integer.parseInt(txtFornecedor.getText()));
 		pagar.setFornecedor(f);
 		pagar.setDataLancto(txtDataLancto.getText());
 		pagar.setDataVencimento(txtDataVencimento.getText());
-		pagar.setNome(txtNome.getText());
-		pagar.setTelefone(txtTelefone.getText());
+		pagar.setValor(Integer.parseInt(txtValor.getText()));
+		pagar.setValorPago(Integer.parseInt(txtValorPago.getText()));
+		pagar.setDataPagamento(txtDataPagamento.getText());
+		pagar.setDescricao(txtDescricao.getText());
 		
-		service.inserirpagar(pagar, new AsyncCallback<Void>() {
+		service.inserirPagar(pagar, new AsyncCallback<Void>() {
 			
 			@Override
 			public void onSuccess(Void result) {
@@ -92,5 +95,5 @@ public class DialogPagar extends DialogBox {
 				Window.alert("Falha ao comunicar com servidor");
 			}
 		});
-	}*/
+	}
 }
