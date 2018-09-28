@@ -8,8 +8,12 @@ import erp.libertas.server.dao.CaixaDao;
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
+<<<<<<< HEAD
+import erp.libertas.shared.Receber;
+=======
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
+>>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 
 import java.util.List;
 

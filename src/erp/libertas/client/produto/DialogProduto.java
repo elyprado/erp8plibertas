@@ -13,6 +13,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import erp.libertas.client.GreetingService;
 import erp.libertas.client.GreetingServiceAsync;
 import erp.libertas.client.componente.CaixaDeTexto;
+import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
 
 public class DialogProduto extends DialogBox {
@@ -32,8 +33,8 @@ public class DialogProduto extends DialogBox {
 	private final GreetingServiceAsync service = GWT.create(GreetingService.class);
 	private ListaProduto listaProduto;
 	
-	public DialogProduto(ListaProduto listaProduto, Produto produto) {
-		this.produto = produto;
+	public DialogProduto(ListaProduto listaProduto, Fornecedor f) {
+		this.produto = f;
 		this.listaProduto = listaProduto;
 		
 		painel.add(txtDescricao);
