@@ -1,11 +1,8 @@
 package erp.libertas.client;
 
-<<<<<<< HEAD
 import erp.libertas.client.cliente.ListaCliente;
-=======
 import erp.libertas.client.banco.ListaBanco;
 import erp.libertas.client.caixa.ListaCaixa;
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 import erp.libertas.client.fornecedor.ListaFornecedor;
 import erp.libertas.shared.FieldVerifier;
 import com.google.gwt.core.client.EntryPoint;
@@ -31,13 +28,12 @@ public class ERP8pLibertas implements EntryPoint {
 	private VerticalPanel painelConteudo = new VerticalPanel();
 	private Label lblTitulo = new Label("ERP 8o período - Libertas");
 	private Button btnFornecedor = new Button("Cadastro de Fornecedores");
-<<<<<<< HEAD
+
 	private Button btnCliente = new Button("Cadastro de Clientes");
-=======
+
 	private Button btnBanco = new Button("Cadastro de Banco");
 	private Button btnCaixa = new Button("Cadastro de Caixa");
 	
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 	public void onModuleLoad() {
 		RootPanel.get().add(lblTitulo);
 		RootPanel.get().add(painelMenu);
@@ -52,7 +48,7 @@ public class ERP8pLibertas implements EntryPoint {
 				painelConteudo.add(cad);
 			}
 		});
-<<<<<<< HEAD
+
 		painelMenu.add(btnCliente);
 		btnCliente.addClickHandler(new 
 				ClickHandler() {
@@ -61,7 +57,8 @@ public class ERP8pLibertas implements EntryPoint {
 				ListaCliente cad = new ListaCliente();
 				painelConteudo.clear();
 				painelConteudo.add(cad);
-=======
+			}
+		});
 		
 		painelMenu.add(btnBanco);
 		btnBanco.addClickHandler(new ClickHandler() {
@@ -80,7 +77,6 @@ public class ERP8pLibertas implements EntryPoint {
 				ListaCaixa cadCaixa = new ListaCaixa();
 				painelConteudo.clear();
 				painelConteudo.add(cadCaixa);
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 			}
 		});
 	}
