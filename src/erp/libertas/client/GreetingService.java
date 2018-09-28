@@ -24,13 +24,13 @@ public interface GreetingService extends RemoteService {
 	public void inserirFornecedor(Fornecedor f);
 	public void alterarFornecedor(Fornecedor f);
 	public void excluirFornecedor(Fornecedor f);
-<<<<<<< HEAD
+
 	public List<Cliente> listarCliente();
 	public void inserirCliente(Cliente c);
 	public void alterarCliente(Cliente c);
 	public void excluirCliente(Cliente c);
 	
-=======
+
 	
 	public List<Produto> listarProduto();
 	public void inserirProduto(Produto p);
@@ -50,6 +50,10 @@ public interface GreetingService extends RemoteService {
 	void inserirCaixa(Caixa c);
 	void alterarCaixa(Caixa c);
 	void excluirCaixa(Caixa c);
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
+
+	public List<Pagar> listarPagar();
+	public void inserirPagar(Pagar pa);
+	public void alterarPagar(Pagar pa);
+	public void excluirPagar(Pagar pa);
 	
 }

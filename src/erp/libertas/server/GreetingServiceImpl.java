@@ -149,4 +149,29 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		CaixaDao cdao = new CaixaDao();
 		cdao.excluir(c);
 	}
+	
+
+	@Override
+	public List<Pagar> listarPagar() {
+		PagarDao padao = new PagarDao();
+		return padao.listar();
+	}
+
+	@Override
+	public void inserirPagar(Pagar pa) {
+		PagarDao padao = new PagarDao();
+		padao.inserir(pa);
+	}
+
+	@Override
+	public void alterarPagar(Pagar pa) {
+		PagarDao padao = new PagarDao();
+		padao.alterar(pa);
+	}
+
+	@Override
+	public void excluirPagar(Pagar pa) {
+		PagarDao padao = new PagarDao();
+		padao.excluir(pa);
+	}
 }
