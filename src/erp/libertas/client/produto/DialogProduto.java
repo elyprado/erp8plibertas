@@ -34,7 +34,7 @@ public class DialogProduto extends DialogBox {
 	private ListaProduto listaProduto;
 	
 	public DialogProduto(ListaProduto listaProduto, Fornecedor f) {
-		this.produto = f;
+	//	this.produto = f;
 		this.listaProduto = listaProduto;
 		
 		painel.add(txtDescricao);

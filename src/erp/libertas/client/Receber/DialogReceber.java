@@ -66,9 +66,9 @@ private Button btnCancelar = new Button("Cancelar");
 	}
 
 	private void salvar() {
-		Cliente c = new Cliente();
-		c.setIdCliente( Integer.parseInt(txtcliente.getText()));
-		Receber.setCliente(txtcliente.getText());
+	//	Cliente c = new Cliente();
+		//c.setIdCliente( Integer.parseInt(txtcliente.getText()));
+		//Receber.setCliente(txtcliente.getText());
 		Receber.setDataLancto(txtdataLancto.getText());
 		Receber.setDataPagamento(txtdataPagamento.getText());
 		Receber.setDataVencimento(txtdataVencimento.getText());

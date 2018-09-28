@@ -1,17 +1,17 @@
 package erp.libertas.shared;
 
 import java.io.Serializable;
-import java.util.Date;
+
 
 public class Pagar implements Serializable{
 
 	private int idpagar;
-	private Date dataLancto;
-	private Date dataVencimento;
+	private String dataLancto;
+	private String dataVencimento;
 	private Fornecedor fornecedor;
 	private double valor;
 	private double valorPago;
-	private Date dataPagamento;
+	private String dataPagamento;
 	private String descricao;
 	
 	
@@ -21,16 +21,16 @@ public class Pagar implements Serializable{
 	public void setIdpagar(int idpagar) {
 		this.idpagar = idpagar;
 	}
-	public Date getDataLancto() {
+	public String getDataLancto() {
 		return dataLancto;
 	}
-	public void setDataLancto(Date dataLancto) {
+	public void setDataLancto(String dataLancto) {
 		this.dataLancto = dataLancto;
 	}
-	public Date getDataVencimento() {
+	public String getDataVencimento() {
 		return dataVencimento;
 	}
-	public void setDataVencimento(Date dataVencimento) {
+	public void setDataVencimento(String dataVencimento) {
 		this.dataVencimento = dataVencimento;
 	}
 	public Fornecedor getFornecedor() {
@@ -51,10 +51,10 @@ public class Pagar implements Serializable{
 	public void setValorPago(double valorPago) {
 		this.valorPago = valorPago;
 	}
-	public Date getDataPagamento(){
+	public String getDataPagamento(){
 		return dataPagamento;
 	}
-	public void setDataPagamento(Date dataPagamento) {
+	public void setDataPagamento(String dataPagamento) {
 		this.dataPagamento = dataPagamento;
 	}
 	public String getDescricao() {

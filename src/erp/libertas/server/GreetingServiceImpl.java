@@ -3,12 +3,14 @@ package erp.libertas.server;
 import erp.libertas.client.GreetingService;
 import erp.libertas.server.dao.ClienteDao;
 import erp.libertas.server.dao.FornecedorDao;
+import erp.libertas.server.dao.PagarDao;
 import erp.libertas.shared.Cliente;
 import erp.libertas.server.dao.ProdutoDao;
 import erp.libertas.server.dao.BancoDao;
 import erp.libertas.server.dao.CaixaDao;
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Pagar;
 import erp.libertas.shared.Produto;
 import erp.libertas.shared.Receber;
 import erp.libertas.shared.Banco;
@@ -69,7 +71,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirCliente(Cliente c) {
 		ClienteDao cdao = new ClienteDao();
 		cdao.excluir(c);
-
+	}
 	@Override
 	public List<Produto> listarProduto() {
 		ProdutoDao pdao = new ProdutoDao();
@@ -173,5 +175,29 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirPagar(Pagar pa) {
 		PagarDao padao = new PagarDao();
 		padao.excluir(pa);
+	}
+
+	@Override
+	public void alterarReceber(Receber r) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void excluirReceber(Receber r) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void inserirReceber(Receber r) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Receber> listaReceber() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
