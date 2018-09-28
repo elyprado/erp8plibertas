@@ -16,13 +16,13 @@ public class FornecedorDao {
 		List<Fornecedor> lista = new ArrayList<Fornecedor>();
 		Conexao con = new Conexao();
 		try {
-			String sql = "SELECT "
-					+ "f.idfornecedor, f.nome,"
-					+ "f.telefone, f.endereco,"
-					+ "c.idcidade, c.nome as cidade,"
-					+ "c.uf "
-					+ "FROM fornecedor f "
-					+ "INNER JOIN cidade c ON f.idcidade = c.idcidade";
+		    String sql = "SELECT "
+				+ "f.idfornecedor, f.nome,"
+				+ "f.telefone, f.endereco,"
+				+ "c.idcidade, c.nome as cidade,"
+				+ "c.uf "
+				+ "FROM fornecedor f "
+				+ "INNER JOIN cidade c ON f.idcidade = c.idcidade";
 			Statement sta = con.getConexao().createStatement();
 			ResultSet res = sta.executeQuery(sql);
 			while (res.next()) {

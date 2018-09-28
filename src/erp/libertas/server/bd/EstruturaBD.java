@@ -15,7 +15,7 @@ public class EstruturaBD {
 					+ "uf varchar(2))";
 			Statement sta = con.getConexao().createStatement();
 			sta.execute(sql);
-
+			
 			/*sql = "INSERT INTO cidade (nome, uf) VALUES"
 					+ "('S�o Sebasti�o do Para�so','MG')";
 			sta.execute(sql);
@@ -33,6 +33,30 @@ public class EstruturaBD {
 					+ "telefone varchar(20),"
 					+ "constraint foreign key (idcidade) references cidade(idcidade) )";
 			sta.execute(sql);
+			
+			//Criação da tabela Produtos - Adenilson/Tiago
+			sql = "CREATE TABLE IF NOT EXISTS produtos ("
+					+ "idProduto int primary key auto_increment,"
+					+ "descricao char(100),"
+					+ "marca char(100))"
+					+ "preco double"
+					+ "saldoEstoque int"
+					+ "codBarras char(30)"
+					;
+			sta = con.getConexao().createStatement();
+			sta.execute(sql);
+			
+			//Criação da tabela CAP - Eldrio/Murilo/Giovanni			
+			sql = "CREATE TABLE IF NOT EXISTS pagar ("
+					+ "idPagar int primary key auto_increment,"
+					+ "dataLancto date,"
+					+ "dataVencimento date,"
+					+ "idfornecedor int,"
+					+ "valor double,"
+					+ "valorPago double,"
+					+ "dataPagamento date,"
+					+ "constraint foreign key (idfornecedor) references fornecedor(idfornecedor))";
+			sta.execute(sql);		
 			
 			con.desconecta();
 			System.out.println("fim");
