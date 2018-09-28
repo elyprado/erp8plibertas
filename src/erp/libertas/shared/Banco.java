@@ -3,6 +3,7 @@ package erp.libertas.shared;
 import java.io.Serializable;
 
 public class Banco implements Serializable {
+    
     private int idBanco;
     private String nome;
 
@@ -18,5 +19,4 @@ public class Banco implements Serializable {
     public void setNome(String nome) {
     	this.nome = nome;
     }
-
 }

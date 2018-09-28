@@ -20,6 +20,7 @@ import erp.libertas.client.caixa.ListaCaixa;
 import erp.libertas.shared.Caixa;
 
 public class ListaCaixa extends Composite {
+    
 	private VerticalPanel painel = new VerticalPanel();
 	private Button btnNovo = new Button("Novo Caixa");
 	private final GreetingServiceAsync service = GWT.create(GreetingService.class);
@@ -39,6 +40,7 @@ public class ListaCaixa extends Composite {
 			}
 		});
 	}
+	
 	public void listar() {
 		painel.clear();
 		painel.add(lblTitulo);

@@ -13,6 +13,7 @@ import erp.libertas.shared.Caixa;
 >>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
+import erp.libertas.shared.Receber;
 
 /**
  * The client-side stub for the RPC service.
@@ -35,6 +36,10 @@ public interface GreetingService extends RemoteService {
 	public void inserirProduto(Produto p);
 	public void alterarProduto(Produto p);
 	public void excluirProduto(Produto p);
+	void alterarReceber(Receber r);
+	void excluirReceber(Receber r);
+	void inserirReceber(Receber r);
+	List<Receber> listaReceber();
 	
 	List<Banco> listarBanco();
 	void inserirBanco(Banco b);

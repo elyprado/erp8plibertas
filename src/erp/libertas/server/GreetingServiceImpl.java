@@ -3,16 +3,14 @@ package erp.libertas.server;
 import erp.libertas.client.GreetingService;
 import erp.libertas.server.dao.ClienteDao;
 import erp.libertas.server.dao.FornecedorDao;
-<<<<<<< HEAD
 import erp.libertas.shared.Cliente;
-=======
 import erp.libertas.server.dao.ProdutoDao;
 import erp.libertas.server.dao.BancoDao;
 import erp.libertas.server.dao.CaixaDao;
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Produto;
+import erp.libertas.shared.Receber;
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
 
@@ -49,7 +47,6 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		FornecedorDao fdao = new FornecedorDao();
 		fdao.excluir(f);
 	}
-<<<<<<< HEAD
 	@Override
 	public List<Cliente> listarCliente() {
 		ClienteDao cdao = new ClienteDao();
@@ -72,7 +69,6 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirCliente(Cliente c) {
 		ClienteDao cdao = new ClienteDao();
 		cdao.excluir(c);
-=======
 
 	@Override
 	public List<Produto> listarProduto() {
@@ -152,7 +148,5 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirCaixa(Caixa c) {
 		CaixaDao cdao = new CaixaDao();
 		cdao.excluir(c);
-		
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 	}
 }

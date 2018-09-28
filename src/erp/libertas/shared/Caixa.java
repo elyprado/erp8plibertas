@@ -4,8 +4,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Caixa implements Serializable {
+    
     private int idCaixa;
-    private Date data;
+    private String data;
     private double valor;
     private String descricao;
     private String planoDeContas;
@@ -19,11 +20,11 @@ public class Caixa implements Serializable {
         this.idCaixa = idCaixa;
     }
     
-    public Date getData() {
+    public String getData() {
         return data;
     }
     
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
     
@@ -58,5 +59,4 @@ public class Caixa implements Serializable {
     public void setBanco(Banco banco) {
         this.banco = banco;
     }
-
 }
