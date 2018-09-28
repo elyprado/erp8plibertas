@@ -4,12 +4,12 @@ import java.sql.Date;
 
 public class Receber {
 	private int idReceber;
-	private Date dataLancto;
-	private Date dataVencimento;
+	private String dataLancto;
+	private String dataVencimento;
 	private Cliente cliente;
 	private double valor;
 	private double valorPago;
-	private Date dataPagamento;
+	private String dataPagamento;
 	private String descricao;
 	public int getIdReceber() {
 		return idReceber;
@@ -17,16 +17,16 @@ public class Receber {
 	public void setIdReceber(int idReceber) {
 		this.idReceber = idReceber;
 	}
-	public Date getDataLancto() {
+	public String getDataLancto() {
 		return dataLancto;
 	}
-	public void setDataLancto(Date dataLancto) {
+	public void setDataLancto(String dataLancto) {
 		this.dataLancto = dataLancto;
 	}
-	public Date getDataVencimento() {
+	public String getDataVencimento() {
 		return dataVencimento;
 	}
-	public void setDataVencimento(Date dataVencimento) {
+	public void setDataVencimento(String dataVencimento) {
 		this.dataVencimento = dataVencimento;
 	}
 	public Cliente getCliente() {
@@ -47,10 +47,10 @@ public class Receber {
 	public void setValorPago(double valorPago) {
 		this.valorPago = valorPago;
 	}
-	public Date getDataPagamento() {
+	public String getDataPagamento() {
 		return dataPagamento;
 	}
-	public void txt(Date dataPagamento) {
+	public void setDataPagamento(String dataPagamento) {
 		this.dataPagamento = dataPagamento;
 	}
 	public String getDescricao() {
@@ -59,4 +59,5 @@ public class Receber {
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
 	}
+	
 }

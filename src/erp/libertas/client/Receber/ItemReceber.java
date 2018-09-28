@@ -5,21 +5,21 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 
-import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Receber;
 
-public class ItemFornecedor extends Composite {
+public class ItemReceber extends Composite {
 	private Label lblNome = new Label();
 	private Label lblId = new Label();
 	private Button btnAlterar = new Button("Alterar");
 	private HorizontalPanel painel = new HorizontalPanel();
-	private Fornecedor fornecedor;
-	private ListaFornecedor listaFornecedor;
+	private Receber receber;
+	private ListaReceber listaReceber;
 	
-	public ItemFornecedor(ListaFornecedor listaFornecedor, Fornecedor fornecedor) {
-		this.fornecedor = fornecedor;
-		this.listaFornecedor = listaFornecedor;
-		lblNome.setText(fornecedor.getNome());
-		lblId.setText(fornecedor.getIdfornecedor()+"-");
+	public ItemReceber(ListaReceber listaReceber, Receber receber) {
+		this.receber = receber;
+		this.listaReceber = listaReceber;
+		lblNome.setText(receber.getDescricao());
+		lblId.setText(receber.getIdReceber()+"-");
 		
 		lblId.setWidth("100px");
 		lblNome.setWidth("300px");
@@ -30,7 +30,4 @@ public class ItemFornecedor extends Composite {
 		initWidget(painel);
 		
 		painel.setStyleName("itemLista");
-	}
-}
-
-
+}}

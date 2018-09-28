@@ -1,4 +1,4 @@
-2package erp.libertas.client.Receber;
+package erp.libertas.client.Receber;
 
 import java.util.List;
 
@@ -14,13 +14,14 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 
 import erp.libertas.client.GreetingService;
 import erp.libertas.client.GreetingServiceAsync;
-import erp.libertas.shared.Fornecedor;
+import erp.libertas.client.Receber.ListaReceber;
+import erp.libertas.shared.Receber;
 
 public class ListaReceber extends Composite {
 	private VerticalPanel painel = new VerticalPanel();
-	private Button btnNovo = new Button("Novo Fornecedor");
+	private Button btnNovo = new Button("Novo Receber");
 	private final GreetingServiceAsync service = GWT.create(GreetingService.class);
-	private Label lblTitulo = new Label("Cadastro de Fornecedores");
+	private Label lblTitulo = new Label("Cadastro de Receberes");
 	
 	public ListaReceber() {
 		initWidget(painel);
@@ -29,8 +30,8 @@ public class ListaReceber extends Composite {
 		btnNovo.addClickHandler(new ClickHandler() {
 			@Override
 			public void onClick(ClickEvent event) {
-				Fornecedor f = new Fornecedor();
-				DialogReceber dialog = new DialogReceber(ListaFornecedor.this, f);
+				Receber f = new Receber();
+				DialogReceber dialog = new DialogReceber(ListaReceber.this, f);
 				dialog.center();
 			}
 		});
@@ -41,14 +42,14 @@ public class ListaReceber extends Composite {
 		painel.add(new Label("Aguarde, carregando..."));
 
 		
-		service.listarFornecedor(new AsyncCallback<List<Fornecedor>>() {
+		service.listaReceber(new AsyncCallback<List<Receber>>() {
 			@Override
-			public void onSuccess(List<Fornecedor> result) {
+			public void onSuccess(List<Receber> result) {
 				painel.clear();
 				painel.add(lblTitulo);
 				painel.add(btnNovo);
-				for (Fornecedor f : result) {
-					ItemFornecedor item = new ItemFornecedor(ListaFornecedor.this, f);
+				for (Receber f : result) {
+					ItemReceber item = new ItemReceber(ListaReceber.this, f);
 					painel.add(item);
 				}
 			}

@@ -73,8 +73,8 @@ private Button btnCancelar = new Button("Cancelar");
 		Receber.setDataPagamento(txtdataPagamento.getText());
 		Receber.setDataVencimento(txtdataVencimento.getText());
 		Receber.setDescricao(txtdescricao.getText());
-		Receber.setValor(txtvalor.getText());
-		Receber.setValorPago(txtvalorPago.getText());
+		Receber.setValor(Double.parseDouble(txtvalor.getText()));
+		Receber.setValorPago(Double.parseDouble(txtvalorPago.getText()));
 		service.inserirReceber(Receber, new AsyncCallback<Void>() {
 			
 			@Override

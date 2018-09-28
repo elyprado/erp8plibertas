@@ -25,7 +25,7 @@ public class ReceberDao {
 			while (res.next()) {
 				Cliente c = new Cliente();
 				Receber r = new Receber();
-				r.set
+				r.setCliente = c;
 				lista.add(r);
 			}
 		} catch (Exception e) {
@@ -38,13 +38,23 @@ public class ReceberDao {
 		Conexao con = new Conexao();
 		try {
 			String sql = "INSERT INTO receber "
-					+ "(nome, telefone, endereco, idcidade) "
-					+ " VALUES (?, ?, ?, ?)";
+					+ "( "
+					+ "  dataLancto ,"
+			+ "  dataVencimento ,"
+			+ "  idcliente ,"
+			+ "  valor ,"
+			+ "  valorPago ,"
+			+ "  dataPagamento ,"
+			+ "  descricao) "
+					+ " VALUES (?, ?, ?, ?,?, ?, ?)";
 			PreparedStatement sta = con.getConexao().prepareStatement(sql);
-			sta.setString(1, f.getNome());
-			sta.setString(2, f.getTelefone());
-			sta.setString(3, f.getEndereco());
-			sta.setInt(4, f.getCidade().getIdcidade());
+			sta.setString(1, f.getDataLancto());
+			sta.setString(2, f.getDataVencimento());
+			sta.setString(3, f.getCliente().getIdCliente());
+			sta.setDouble(4, f.getValor());
+			sta.setDouble(5, f.getValorPago());
+			sta.setString(6, f.getDataPagamento);
+			sta.setString(7, f.getDescricao);
 			sta.execute();			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -55,17 +65,23 @@ public class ReceberDao {
 		Conexao con = new Conexao();
 		try {
 			String sql = "UPDATE receber SET "
-					+ "nome = ?, "
-					+ "telefone = ?,"
-					+ "endereco = ?,"
-					+ "idcidade = ? "
+					+ "  dataLancto = ? ,"
+					+ "  dataVencimento = ? ,"
+					+ "  idcliente = ? ,"
+					+ "  valor = ? ,"
+					+ "  valorPago = ? ,"
+					+ "  dataPagamento = ? ,"
+					+ "  descricao = ? "
 					+ "WHERE idreceber = ?";
 			PreparedStatement sta = con.getConexao().prepareStatement(sql);
-			sta.setString(1, f.getNome());
-			sta.setString(2, f.getTelefone());
-			sta.setString(3, f.getEndereco());
-			sta.setInt(4, f.getCidade().getIdcidade());
-			sta.setInt(5, f.getIdreceber());
+			sta.setString(1, f.getDataLancto());
+			sta.setString(2, f.getDataVencimento());
+			sta.setString(3, f.getCliente().getIdCliente());
+			sta.setDouble(4, f.getValor());
+			sta.setDouble(5, f.getValorPago());
+			sta.setString(6, f.getDataPagamento);
+			sta.setString(7, f.getDescricao);
+			sta.setInt(8, f.getIdReceber());
 			sta.execute();			
 		} catch (Exception e) {
 			e.printStackTrace();
