@@ -5,13 +5,13 @@ import java.util.List;
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
-<<<<<<< HEAD
+
 import erp.libertas.shared.Cliente;
-=======
+
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Pagar;
 import erp.libertas.shared.Produto;
 import erp.libertas.shared.Receber;
 

@@ -4,13 +4,14 @@ import java.util.List;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
-<<<<<<< HEAD
+
 import erp.libertas.shared.Cliente;
-=======
+
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
+
 import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Pagar;
 import erp.libertas.shared.Produto;
 import erp.libertas.shared.Receber;
 
@@ -22,13 +23,13 @@ public interface GreetingServiceAsync {
 	void inserirFornecedor(Fornecedor f, AsyncCallback<Void> callback);
 	void alterarFornecedor(Fornecedor f, AsyncCallback<Void> callback);
 	void excluirFornecedor(Fornecedor f, AsyncCallback<Void> callback);
-<<<<<<< HEAD
+
 	void listarCliente(AsyncCallback<List<Cliente>> callback);
 	void inserirCliente(Cliente c, AsyncCallback<Void> callback);
 	void alterarCliente(Cliente c, AsyncCallback<Void> callback);
 	void excluirCliente(Cliente c, AsyncCallback<Void> callback);
 	
-=======
+
 	void listarProduto(AsyncCallback<List<Produto>> callback);
 	void alterarProduto(Produto p, AsyncCallback<Void> callback);
 	void excluirProduto(Produto p, AsyncCallback<Void> callback);
@@ -45,5 +46,9 @@ public interface GreetingServiceAsync {
 	void inserirCaixa(Caixa c, AsyncCallback<Void> callback);
 	void alterarCaixa(Caixa c, AsyncCallback<Void> callback);
 	void excluirCaixa(Caixa c, AsyncCallback<Void> callback);
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
+
+	void listarPagar(AsyncCallback<List<Pagar>> callback);
+	void inserirPagar(Pagar pa, AsyncCallback<Void> callback);
+	void alterarPagar(Pagar pa, AsyncCallback<Void> callback);
+	void excluirPagar(Pagar pa, AsyncCallback<Void> callback);
 }
