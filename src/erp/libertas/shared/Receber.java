@@ -1,8 +1,8 @@
 package erp.libertas.shared;
 
-import java.sql.Date;
+import java.io.Serializable;
 
-public class Receber {
+public class Receber implements Serializable  {
 	private int idReceber;
 	private String dataLancto;
 	private String dataVencimento;
