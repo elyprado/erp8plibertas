@@ -3,4 +3,4 @@
 >>>>>>>=branch 'master' of https\://github.com/elyprado/erp8plibertas.git
 eclipse.preferences.version=1
 entryPointModules=
-filesCopiedToWebInfLib=
+filesCopiedToWebInfLib=gwt-servlet.jar

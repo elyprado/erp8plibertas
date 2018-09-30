@@ -38,12 +38,10 @@ public class EstruturaBD {
 			sql = "CREATE TABLE IF NOT EXISTS produtos ("
 					+ "idProduto int primary key auto_increment,"
 					+ "descricao char(100),"
-					+ "marca char(100))"
-					+ "preco double"
-					+ "saldoEstoque int"
-					+ "codBarras char(30)"
-					;
-			sta = con.getConexao().createStatement();
+					+ "marca char(100),"
+					+ "preco double,"
+					+ "saldoEstoque int,"
+					+ "codBarras char(30))";
 			sta.execute(sql);
 			
 
