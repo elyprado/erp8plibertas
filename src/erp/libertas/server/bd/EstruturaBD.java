@@ -41,9 +41,8 @@ public class EstruturaBD {
 					;
 			sta = con.getConexao().createStatement();
 			sta.execute(sql);
-			
-<<<<<<< HEAD
-			sql = "CREATE TABLE IF NOT EXISTS receber ("
+//			Criação tabela Receber - Alex e Flávio
+						sql = "CREATE TABLE IF NOT EXISTS receber ("
 					+ "  idReceber int,"
 					+ "  dataLancto date,"
 			+ "  dataVencimento date,"
@@ -54,7 +53,6 @@ public class EstruturaBD {
 			+ "  descricao varchar(50),"
 			+ "constraint foreign key (idcliente) references cliente(idcliente) )";
 			sta.execute(sql);
-=======
 			//Criação da tabela CAP - Eldrio/Murilo/Giovanni			
 			sql = "CREATE TABLE IF NOT EXISTS pagar ("
 					+ "idPagar int primary key auto_increment,"
@@ -66,7 +64,6 @@ public class EstruturaBD {
 					+ "dataPagamento date,"
 					+ "constraint foreign key (idfornecedor) references fornecedor(idfornecedor))";
 			sta.execute(sql);		
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 			
 			con.desconecta();
 			System.out.println("fim");
