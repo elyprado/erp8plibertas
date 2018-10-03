@@ -1,19 +1,20 @@
 package erp.libertas.server;
 
 import erp.libertas.client.GreetingService;
+import erp.libertas.server.dao.ClienteDao;
 import erp.libertas.server.dao.FornecedorDao;
+import erp.libertas.server.dao.PagarDao;
+import erp.libertas.shared.Cliente;
 import erp.libertas.server.dao.ProdutoDao;
 import erp.libertas.server.dao.BancoDao;
 import erp.libertas.server.dao.CaixaDao;
 import erp.libertas.shared.FieldVerifier;
 import erp.libertas.shared.Fornecedor;
+import erp.libertas.shared.Pagar;
 import erp.libertas.shared.Produto;
-<<<<<<< HEAD
 import erp.libertas.shared.Receber;
-=======
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
->>>>>>> branch 'master' of https://github.com/elyprado/erp8plibertas.git
 
 import java.util.List;
 
@@ -48,7 +49,29 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		FornecedorDao fdao = new FornecedorDao();
 		fdao.excluir(f);
 	}
+	@Override
+	public List<Cliente> listarCliente() {
+		ClienteDao cdao = new ClienteDao();
+		return cdao.listar();
+	}
 
+	@Override
+	public void inserirCliente(Cliente c) {
+		ClienteDao cdao = new ClienteDao();
+		cdao.inserir(c);
+	}
+
+	@Override
+	public void alterarCliente(Cliente c) {
+		ClienteDao cdao = new ClienteDao();
+		cdao.alterar(c);	
+	}
+
+	@Override
+	public void excluirCliente(Cliente c) {
+		ClienteDao cdao = new ClienteDao();
+		cdao.excluir(c);
+	}
 	@Override
 	public List<Produto> listarProduto() {
 		ProdutoDao pdao = new ProdutoDao();
@@ -127,6 +150,54 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirCaixa(Caixa c) {
 		CaixaDao cdao = new CaixaDao();
 		cdao.excluir(c);
+	}
+	
+
+	@Override
+	public List<Pagar> listarPagar() {
+		PagarDao padao = new PagarDao();
+		return padao.listar();
+	}
+
+	@Override
+	public void inserirPagar(Pagar pa) {
+		PagarDao padao = new PagarDao();
+		padao.inserir(pa);
+	}
+
+	@Override
+	public void alterarPagar(Pagar pa) {
+		PagarDao padao = new PagarDao();
+		padao.alterar(pa);
+	}
+
+	@Override
+	public void excluirPagar(Pagar pa) {
+		PagarDao padao = new PagarDao();
+		padao.excluir(pa);
+	}
+
+	@Override
+	public void alterarReceber(Receber r) {
+		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public void excluirReceber(Receber r) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void inserirReceber(Receber r) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Receber> listaReceber() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

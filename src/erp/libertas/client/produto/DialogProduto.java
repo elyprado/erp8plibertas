@@ -33,8 +33,8 @@ public class DialogProduto extends DialogBox {
 	private final GreetingServiceAsync service = GWT.create(GreetingService.class);
 	private ListaProduto listaProduto;
 	
-	public DialogProduto(ListaProduto listaProduto, Fornecedor f) {
-		this.produto = f;
+	public DialogProduto(ListaProduto listaProduto, Produto p) {
+	    this.produto = p;
 		this.listaProduto = listaProduto;
 		
 		painel.add(txtDescricao);

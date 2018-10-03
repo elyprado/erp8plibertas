@@ -20,11 +20,15 @@ public class EstruturaBD {
 					+ "('S�o Sebasti�o do Para�so','MG')";
 			sta.execute(sql);
 			*/
+			
 
-			sql = "CREATE TABLE IF NOT EXISTS fornecedor ("
-					+ "idfornecedor int primary key auto_increment,"
+			sql = "CREATE TABLE IF NOT EXISTS cliente ("
+					+ "idcliente int primary key auto_increment,"
 					+ "nome varchar(50),"
 					+ "endereco varchar(50),"
+					+ "bairro varchar(50),"
+					+ "email varchar(50),"
+					+"cpf varchar(20),"
 					+ "idcidade int,"
 					+ "telefone varchar(20),"
 					+ "constraint foreign key (idcidade) references cidade(idcidade) )";
@@ -34,15 +38,13 @@ public class EstruturaBD {
 			sql = "CREATE TABLE IF NOT EXISTS produtos ("
 					+ "idProduto int primary key auto_increment,"
 					+ "descricao char(100),"
-					+ "marca char(100))"
-					+ "preco double"
-					+ "saldoEstoque int"
-					+ "codBarras char(30)"
-					;
-			sta = con.getConexao().createStatement();
+					+ "marca char(100),"
+					+ "preco double,"
+					+ "saldoEstoque int,"
+					+ "codBarras char(30))";
 			sta.execute(sql);
 //			Criação tabela Receber - Alex e Flávio
-						sql = "CREATE TABLE IF NOT EXISTS receber ("
+			sql = "CREATE TABLE IF NOT EXISTS receber ("
 					+ "  idReceber int,"
 					+ "  dataLancto date,"
 			+ "  dataVencimento date,"
@@ -53,6 +55,7 @@ public class EstruturaBD {
 			+ "  descricao varchar(50),"
 			+ "constraint foreign key (idcliente) references cliente(idcliente) )";
 			sta.execute(sql);
+
 			//Criação da tabela CAP - Eldrio/Murilo/Giovanni			
 			sql = "CREATE TABLE IF NOT EXISTS pagar ("
 					+ "idPagar int primary key auto_increment,"
