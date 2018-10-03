@@ -1,5 +1,6 @@
 package erp.libertas.client;
 
+import erp.libertas.client.Receber.ListaReceber;
 import erp.libertas.client.banco.ListaBanco;
 import erp.libertas.client.caixa.ListaCaixa;
 import erp.libertas.client.fornecedor.ListaFornecedor;
@@ -28,6 +29,7 @@ public class ERP8pLibertas implements EntryPoint {
 	private Label lblTitulo = new Label("ERP 8o período - Libertas");
 	private Button btnFornecedor = new Button("Cadastro de Fornecedores");
 	private Button btnBanco = new Button("Cadastro de Banco");
+	private Button btnReceber = new Button("Cadastro de COntas a Receber");
 	private Button btnCaixa = new Button("Cadastro de Caixa");
 	
 	public void onModuleLoad() {
@@ -62,6 +64,16 @@ public class ERP8pLibertas implements EntryPoint {
 				ListaCaixa cadCaixa = new ListaCaixa();
 				painelConteudo.clear();
 				painelConteudo.add(cadCaixa);
+			}
+		});
+	
+		painelMenu.add(btnReceber);
+		btnReceber.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				ListaReceber cadReceber = new ListaReceber();
+				painelConteudo.clear();
+				painelConteudo.add(cadReceber);
 			}
 		});
 	}
