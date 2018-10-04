@@ -34,7 +34,7 @@ public class ERP8pLibertas implements EntryPoint {
 	private Button btnCliente = new Button("Cadastro de Clientes");
 
 	private Button btnBanco = new Button("Cadastro de Banco");
-	private Button btnReceber = new Button("Cadastro de COntas a Receber");
+	private Button btnReceber = new Button("Cadastro de Contas a Receber");
 	private Button btnCaixa = new Button("Cadastro de Caixa");
 	
 	private Button btnProduto = new Button("Cadastro de Produto");

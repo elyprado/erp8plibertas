@@ -46,7 +46,7 @@ private Button btnCancelar = new Button("Cancelar");
 		painelBtn.add(btnSalvar);		
 		painelBtn.add(btnExcluir);
 		painelBtn.add(btnCancelar);
-		
+		painel.add(painelBtn);
 		super.add(painel);
 		super.setText("Cadastro de Contas a Receber");
 		
