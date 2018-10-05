@@ -15,15 +15,11 @@ public class ReceberDao {
 		List<Receber> lista = new ArrayList<Receber>();
 		Conexao con = new Conexao();
 		try {
-			String sql = "SELECT *"
-					+ "FROM receber r "
-					+ "INNER JOIN Cliente c ON r.idCliente = c.idclient";
+			String sql = "SELECT * FROM receber";
 			Statement sta = con.getConexao().createStatement();
 			ResultSet res = sta.executeQuery(sql);
 			while (res.next()) {
-				Cliente c = new Cliente();
 				Receber r = new Receber();
-				r.setCliente(c);
 				r.setDataLancto(res.getString("dataLancto"));
 				r.setDataPagamento(res.getString("dataPagamento"));
 				r.setDataVencimento(res.getString("dataVencimento"));
