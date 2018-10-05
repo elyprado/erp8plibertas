@@ -15,13 +15,11 @@ public class ReceberDao {
 		List<Receber> lista = new ArrayList<Receber>();
 		Conexao con = new Conexao();
 		try {
-			String sql = "SELECT *"
-					+ "FROM receber r ";
+			String sql = "SELECT * FROM receber";
 			Statement sta = con.getConexao().createStatement();
 			ResultSet res = sta.executeQuery(sql);
 			while (res.next()) {
 				Receber r = new Receber();
-			
 				r.setDataLancto(res.getString("dataLancto"));
 				r.setDataPagamento(res.getString("dataPagamento"));
 				r.setDataVencimento(res.getString("dataVencimento"));
