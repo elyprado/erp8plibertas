@@ -16,14 +16,12 @@ public class ReceberDao {
 		Conexao con = new Conexao();
 		try {
 			String sql = "SELECT *"
-					+ "FROM receber r "
-					+ "INNER JOIN Cliente c ON r.idCliente = c.idclient";
+					+ "FROM receber r ";
 			Statement sta = con.getConexao().createStatement();
 			ResultSet res = sta.executeQuery(sql);
 			while (res.next()) {
-				Cliente c = new Cliente();
 				Receber r = new Receber();
-				r.setCliente(c);
+			
 				r.setDataLancto(res.getString("dataLancto"));
 				r.setDataPagamento(res.getString("dataPagamento"));
 				r.setDataVencimento(res.getString("dataVencimento"));
