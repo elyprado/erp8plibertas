@@ -24,6 +24,13 @@ public class ReceberDao {
 				Cliente c = new Cliente();
 				Receber r = new Receber();
 				r.setCliente(c);
+				r.setDataLancto(res.getString("dataLancto"));
+				r.setDataPagamento(res.getString("dataPagamento"));
+				r.setDataVencimento(res.getString("dataVencimento"));
+				r.setDescricao(res.getString("descricao"));
+				r.setIdReceber(res.getInt("idReceber"));
+				r.setValor(res.getDouble("valor"));
+				r.setValorPago(res.getDouble("valorPago"));
 				lista.add(r);
 			}
 		} catch (Exception e) {
