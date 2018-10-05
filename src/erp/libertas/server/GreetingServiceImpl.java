@@ -1,25 +1,26 @@
 package erp.libertas.server;
 
+import java.util.List;
+
+import com.google.gwt.user.server.rpc.RemoteServiceServlet;
+
 import erp.libertas.client.GreetingService;
-import erp.libertas.server.dao.ClienteDao;
-import erp.libertas.server.dao.FornecedorDao;
-import erp.libertas.server.dao.PagarDao;
-import erp.libertas.shared.Cliente;
-import erp.libertas.server.dao.ProdutoDao;
-import erp.libertas.server.dao.ReceberDao;
 import erp.libertas.server.dao.BancoDao;
 import erp.libertas.server.dao.CaixaDao;
-import erp.libertas.shared.FieldVerifier;
+import erp.libertas.server.dao.ClienteDao;
+import erp.libertas.server.dao.CompraDao;
+import erp.libertas.server.dao.FornecedorDao;
+import erp.libertas.server.dao.PagarDao;
+import erp.libertas.server.dao.ProdutoDao;
+import erp.libertas.server.dao.ReceberDao;
+import erp.libertas.shared.Banco;
+import erp.libertas.shared.Caixa;
+import erp.libertas.shared.Cliente;
+import erp.libertas.shared.Compra;
 import erp.libertas.shared.Fornecedor;
 import erp.libertas.shared.Pagar;
 import erp.libertas.shared.Produto;
 import erp.libertas.shared.Receber;
-import erp.libertas.shared.Banco;
-import erp.libertas.shared.Caixa;
-
-import java.util.List;
-
-import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 /**
  * The server-side implementation of the RPC service.
@@ -201,5 +202,29 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public List<Receber> listaReceber() {
 		ReceberDao rdao = new ReceberDao();
 		return rdao.listar();
+	}
+	
+	@Override
+	public List<Compra> listarCompra() {
+		CompraDao cdao = new CompraDao();
+		return cdao.listar();
+	}
+
+	@Override
+	public void inserirCompra(Compra c) {
+		CompraDao cdao = new CompraDao();
+		cdao.inserir(c);
+	}
+
+	@Override
+	public void alterarCompra(Compra c) {
+		CompraDao cdao = new CompraDao();
+		cdao.alterar(c);	
+	}
+
+	@Override
+	public void excluirCompra(Compra c) {
+		CompraDao cdao = new CompraDao();
+		cdao.excluir(c);
 	}
 }
