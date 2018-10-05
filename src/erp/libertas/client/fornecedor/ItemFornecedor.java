@@ -1,5 +1,7 @@
 package erp.libertas.client.fornecedor;
 
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.HorizontalPanel;
@@ -30,6 +32,15 @@ public class ItemFornecedor extends Composite {
 		initWidget(painel);
 		
 		painel.setStyleName("itemLista");
+		
+		btnAlterar.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				DialogFornecedor d = new DialogFornecedor(listaFornecedor, fornecedor);
+				d.center();
+			}
+		});
 	}
 }
 

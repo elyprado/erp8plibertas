@@ -1,5 +1,6 @@
 package erp.libertas.server;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -7,6 +8,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import erp.libertas.client.GreetingService;
 import erp.libertas.server.dao.BancoDao;
 import erp.libertas.server.dao.CaixaDao;
+import erp.libertas.server.dao.CidadeDao;
 import erp.libertas.server.dao.ClienteDao;
 import erp.libertas.server.dao.CompraDao;
 import erp.libertas.server.dao.FornecedorDao;
@@ -15,6 +17,7 @@ import erp.libertas.server.dao.ProdutoDao;
 import erp.libertas.server.dao.ReceberDao;
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
+import erp.libertas.shared.Cidade;
 import erp.libertas.shared.Cliente;
 import erp.libertas.shared.Compra;
 import erp.libertas.shared.Fornecedor;
@@ -226,5 +229,11 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void excluirCompra(Compra c) {
 		CompraDao cdao = new CompraDao();
 		cdao.excluir(c);
+	}
+	
+	@Override
+	public ArrayList<Cidade> listarCidade() {
+		CidadeDao cdao = new CidadeDao();
+		return cdao.listar();
 	}
 }

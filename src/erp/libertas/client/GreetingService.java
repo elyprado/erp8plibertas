@@ -1,5 +1,6 @@
 package erp.libertas.client;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -7,6 +8,7 @@ import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
 
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
+import erp.libertas.shared.Cidade;
 import erp.libertas.shared.Cliente;
 import erp.libertas.shared.Compra;
 import erp.libertas.shared.Fornecedor;
@@ -59,5 +61,6 @@ public interface GreetingService extends RemoteService {
 	public void inserirCompra(Compra c);
 	public void alterarCompra(Compra c);
 	public void excluirCompra(Compra c);
+	ArrayList<Cidade> listarCidade();
 	
 }

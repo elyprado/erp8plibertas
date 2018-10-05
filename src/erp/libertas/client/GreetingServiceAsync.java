@@ -1,11 +1,13 @@
 package erp.libertas.client;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 import erp.libertas.shared.Banco;
 import erp.libertas.shared.Caixa;
+import erp.libertas.shared.Cidade;
 import erp.libertas.shared.Cliente;
 import erp.libertas.shared.Compra;
 import erp.libertas.shared.Fornecedor;
@@ -54,4 +56,5 @@ public interface GreetingServiceAsync {
 	void inserirCompra(Compra c, AsyncCallback<Void> callback);
 	void alterarCompra(Compra c, AsyncCallback<Void> callback);
 	void excluirCompra(Compra c, AsyncCallback<Void> callback);
+	void listarCidade(AsyncCallback<ArrayList<Cidade>> callback);
 }
