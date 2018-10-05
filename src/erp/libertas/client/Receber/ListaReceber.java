@@ -48,8 +48,8 @@ public class ListaReceber extends Composite {
 				painel.clear();
 				painel.add(lblTitulo);
 				painel.add(btnNovo);
-				for (Receber f : result) {
-					ItemReceber item = new ItemReceber(ListaReceber.this, f);
+				for (Receber r : result) {
+					ItemReceber item = new ItemReceber(ListaReceber.this, r);
 					painel.add(item);
 				}
 			}

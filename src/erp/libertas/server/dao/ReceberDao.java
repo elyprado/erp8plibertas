@@ -23,7 +23,14 @@ public class ReceberDao {
 			while (res.next()) {
 				Cliente c = new Cliente();
 				Receber r = new Receber();
-			//	r.setCliente = c;
+				r.setCliente(c);
+				r.setDataLancto(res.getString("dataLancto"));
+				r.setDataPagamento(res.getString("dataPagamento"));
+				r.setDataVencimento(res.getString("dataVencimento"));
+				r.setDescricao(res.getString("descricao"));
+				r.setIdReceber(res.getInt("idReceber"));
+				r.setValor(res.getDouble("valor"));
+				r.setValorPago(res.getDouble("valorPago"));
 				lista.add(r);
 			}
 		} catch (Exception e) {
@@ -48,11 +55,11 @@ public class ReceberDao {
 			PreparedStatement sta = con.getConexao().prepareStatement(sql);
 			sta.setString(1, f.getDataLancto());
 			sta.setString(2, f.getDataVencimento());
-		//	sta.setString(3, f.getCliente().getIdCliente());
+			sta.setInt(3, f.getCliente().getIdCliente());
 			sta.setDouble(4, f.getValor());
 			sta.setDouble(5, f.getValorPago());
-		//	sta.setString(6, f.getDataPagamento);
-		//	sta.setString(7, f.getDescricao);
+			sta.setString(6, f.getDataPagamento());
+			sta.setString(7, f.getDescricao());
 			sta.execute();			
 		} catch (Exception e) {
 			e.printStackTrace();

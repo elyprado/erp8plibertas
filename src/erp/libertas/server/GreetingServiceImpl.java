@@ -6,6 +6,7 @@ import erp.libertas.server.dao.FornecedorDao;
 import erp.libertas.server.dao.PagarDao;
 import erp.libertas.shared.Cliente;
 import erp.libertas.server.dao.ProdutoDao;
+import erp.libertas.server.dao.ReceberDao;
 import erp.libertas.server.dao.BancoDao;
 import erp.libertas.server.dao.CaixaDao;
 import erp.libertas.shared.FieldVerifier;
@@ -41,7 +42,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	@Override
 	public void alterarFornecedor(Fornecedor f) {
 		FornecedorDao fdao = new FornecedorDao();
-		fdao.alterar(f);	
+		fdao.alterar(f);
 	}
 
 	@Override
@@ -49,6 +50,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		FornecedorDao fdao = new FornecedorDao();
 		fdao.excluir(f);
 	}
+
 	@Override
 	public List<Cliente> listarCliente() {
 		ClienteDao cdao = new ClienteDao();
@@ -64,7 +66,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	@Override
 	public void alterarCliente(Cliente c) {
 		ClienteDao cdao = new ClienteDao();
-		cdao.alterar(c);	
+		cdao.alterar(c);
 	}
 
 	@Override
@@ -72,6 +74,7 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		ClienteDao cdao = new ClienteDao();
 		cdao.excluir(c);
 	}
+
 	@Override
 	public List<Produto> listarProduto() {
 		ProdutoDao pdao = new ProdutoDao();
@@ -82,23 +85,23 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void inserirProduto(Produto p) {
 		ProdutoDao pdao = new ProdutoDao();
 		pdao.inserir(p);
-		
+
 	}
 
 	@Override
 	public void alterarProduto(Produto p) {
 		ProdutoDao pdao = new ProdutoDao();
 		pdao.alterar(p);
-		
+
 	}
 
 	@Override
 	public void excluirProduto(Produto p) {
 		ProdutoDao pdao = new ProdutoDao();
 		pdao.excluir(p);
-		
+
 	}
-	
+
 	@Override
 	public List<Banco> listarBanco() {
 		BancoDao bdao = new BancoDao();
@@ -109,23 +112,23 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void inserirBanco(Banco b) {
 		BancoDao bdao = new BancoDao();
 		bdao.inserir(b);
-		
+
 	}
 
 	@Override
 	public void alterarBanco(Banco b) {
 		BancoDao bdao = new BancoDao();
 		bdao.alterar(b);
-		
+
 	}
 
 	@Override
 	public void excluirBanco(Banco b) {
 		BancoDao bdao = new BancoDao();
 		bdao.excluir(b);
-		
+
 	}
-	
+
 	@Override
 	public List<Caixa> listarCaixa() {
 		CaixaDao cdao = new CaixaDao();
@@ -136,14 +139,14 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 	public void inserirCaixa(Caixa c) {
 		CaixaDao cdao = new CaixaDao();
 		cdao.inserir(c);
-		
+
 	}
 
 	@Override
 	public void alterarCaixa(Caixa c) {
 		CaixaDao cdao = new CaixaDao();
 		cdao.alterar(c);
-		
+
 	}
 
 	@Override
@@ -151,7 +154,6 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 		CaixaDao cdao = new CaixaDao();
 		cdao.excluir(c);
 	}
-	
 
 	@Override
 	public List<Pagar> listarPagar() {
@@ -179,25 +181,25 @@ public class GreetingServiceImpl extends RemoteServiceServlet implements Greetin
 
 	@Override
 	public void alterarReceber(Receber r) {
-		// TODO Auto-generated method stub
-		
+		ReceberDao rdao = new ReceberDao();
+		rdao.alterar(r);
 	}
 
 	@Override
 	public void excluirReceber(Receber r) {
-		// TODO Auto-generated method stub
-		
+		ReceberDao rdao = new ReceberDao();
+		rdao.excluir(r);
 	}
 
 	@Override
 	public void inserirReceber(Receber r) {
-		// TODO Auto-generated method stub
-		
+		ReceberDao rdao = new ReceberDao();
+		rdao.inserir(r);
 	}
 
 	@Override
 	public List<Receber> listaReceber() {
-		// TODO Auto-generated method stub
-		return null;
+		ReceberDao rdao = new ReceberDao();
+		return rdao.listar();
 	}
 }
