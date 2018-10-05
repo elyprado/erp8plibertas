@@ -1,4 +1,5 @@
 package erp.libertas.client;
+
 import erp.libertas.client.Receber.ListaReceber;
 
 import erp.libertas.client.cliente.ListaCliente;
@@ -8,22 +9,24 @@ import erp.libertas.client.fornecedor.ListaFornecedor;
 import erp.libertas.client.pagar.ListaPagar;
 import erp.libertas.client.produto.ListaProduto;
 import erp.libertas.shared.FieldVerifier;
+
+
 import com.google.gwt.core.client.EntryPoint;
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.KeyCodes;
-import com.google.gwt.event.dom.client.KeyUpEvent;
-import com.google.gwt.event.dom.client.KeyUpHandler;
-import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.DialogBox;
-import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
-import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
+
+import erp.libertas.client.Receber.ListaReceber;
+import erp.libertas.client.banco.ListaBanco;
+import erp.libertas.client.caixa.ListaCaixa;
+import erp.libertas.client.cliente.ListaCliente;
+import erp.libertas.client.compra.ListaCompra;
+import erp.libertas.client.fornecedor.ListaFornecedor;
+import erp.libertas.client.produto.ListaProduto;
 
 
 public class ERP8pLibertas implements EntryPoint {
@@ -38,6 +41,7 @@ public class ERP8pLibertas implements EntryPoint {
 	private Button btnReceber = new Button("Cadastro de Contas a Receber");
 	private Button btnPagar = new Button("Cadastro de Contas a Pagar");
 	private Button btnCaixa = new Button("Cadastro de Caixa");
+	private Button btnCompra = new Button("Cadastro de Compras");
 	
 	private Button btnProduto = new Button("Cadastro de Produto");
 	
@@ -107,6 +111,7 @@ public class ERP8pLibertas implements EntryPoint {
 			}
 		});
 		
+
 		painelMenu.add(btnPagar);
 		btnPagar.addClickHandler(new ClickHandler() {
 			@Override
@@ -114,6 +119,15 @@ public class ERP8pLibertas implements EntryPoint {
 				ListaPagar cadPagar = new ListaPagar();
 				painelConteudo.clear();
 				painelConteudo.add(cadPagar );
+			}
+		});
+		painelMenu.add(btnCompra);
+		btnCompra.addClickHandler(new ClickHandler() {
+			@Override
+			public void onClick(ClickEvent event) {
+				ListaCompra cadCompra = new ListaCompra();
+				painelConteudo.clear();
+				painelConteudo.add(cadCompra);
 			}
 		});
 	}
