@@ -46,12 +46,12 @@ public class EstruturaBD {
 //			Criação tabela Receber - Alex e Flávio
 			sql = "CREATE TABLE IF NOT EXISTS receber ("
 					+ "  idReceber int,"
-					+ "  dataLancto date,"
-			+ "  dataVencimento date,"
+					+ "  dataLancto varchar(50),"
+			+ "  dataVencimento varchar(50),"
 			+ "  idcliente int,"
 			+ "  valor double,"
 			+ "  valorPago double,"
-			+ "  dataPagamento date,"
+			+ "  dataPagamento varchar(50),"
 			+ "  descricao varchar(50),"
 			+ "constraint foreign key (idcliente) references cliente(idcliente) )";
 			sta.execute(sql);

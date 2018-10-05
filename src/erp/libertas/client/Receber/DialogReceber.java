@@ -13,6 +13,7 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import erp.libertas.client.GreetingService;
 import erp.libertas.client.GreetingServiceAsync;
 import erp.libertas.client.componente.CaixaDeTexto;
+import erp.libertas.shared.Cliente;
 import erp.libertas.shared.Receber;
 
 public class DialogReceber extends DialogBox {
@@ -66,9 +67,10 @@ private Button btnCancelar = new Button("Cancelar");
 	}
 
 	private void salvar() {
-	//	Cliente c = new Cliente();
-		//c.setIdCliente( Integer.parseInt(txtcliente.getText()));
-		//Receber.setCliente(txtcliente.getText());
+		Cliente c = new Cliente();
+		c.setNome(txtcliente.getText());
+		c.setIdCliente( Integer.parseInt(txtcliente.getText()));
+		Receber.setCliente(c);
 		Receber.setDataLancto(txtdataLancto.getText());
 		Receber.setDataPagamento(txtdataPagamento.getText());
 		Receber.setDataVencimento(txtdataVencimento.getText());
